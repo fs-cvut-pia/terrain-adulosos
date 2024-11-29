@@ -16,7 +16,7 @@ bool AirPath::find() {
         openSet.pop();
 
         if (current.point == finish) {
-            // Reconstruct path
+            // Rekonstrukce cesty
             Point p = finish;
             path.push_back(p);
             while (p != start) {

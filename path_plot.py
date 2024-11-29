@@ -3,6 +3,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
+import os
 
 # Parameters for terrain generation
 width = 256
@@ -34,4 +35,6 @@ ax.set_xlabel('X')
 ax.set_ylabel('Y')
 
 plt.colorbar(terrain_plot)
-plt.show()
+plt.savefig('graf.png')
+print("Graf byl uložen jako 'graf.png'")
+os.system('start ./graf.png')
