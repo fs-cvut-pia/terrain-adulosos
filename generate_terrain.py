@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import noise
 import random
+import os
 
 seed = random.randint(0,100)
 plt.rcParams["figure.figsize"] = (20,20)
@@ -35,7 +36,9 @@ ax.set_xlabel('X')
 ax.set_ylabel('Y')
 
 plt.colorbar(terrain_plot)
-plt.show()
+plt.savefig('graf.png')
+print("Graf byl uložen jako 'graf.png'")
+os.system('start ./graf.png')
 
 f = open("terrain_new.dat",'w')
 for i in range(height):

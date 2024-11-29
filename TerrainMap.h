@@ -13,7 +13,7 @@ struct Point {
     int x;
     int y;
     constexpr static int nx_max = 10000;
-    Point& operator= (double a) { x = a; y = a; return *this; };
+    Point& operator= (double a) {static_cast<int>(a); static_cast<int>(a); ; return *this; };
     bool operator!= (Point const& v) const { return !(operator== (v)); };
     bool operator== (Point const& v) const { return x == v.x && y == v.y; };
     Point operator+ (Point const& v) const { return Point(x+v.x,y+v.y); };
