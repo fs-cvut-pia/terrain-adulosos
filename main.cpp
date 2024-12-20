@@ -1,5 +1,10 @@
 #include "TerrainMap.h"
 #include "Path.h"
+#include "AirPath.h"
+#include "ShipPath.h"
+#include "RoadPath.h"
+#include "Lod.h"
+#include "Letadlo.h"
 #include <vector>
 #include <iostream>
 #include <string>
@@ -34,7 +39,8 @@ int main(int argc, char *argv[]) {
     Point finish = read_coordinates(argc,argv,4);
 
     std::vector<Path*> paths = { //new YourPath(m,"MyPathName",start,finish), ...
-        // Here add the list of dynamically created classes with path finding algorithms
+        new Lod(m, start, finish),
+        new Letadlo(m, start, finish) // Here add the list of dynamically created classes with path finding algorithms
     };
 
     for (auto& p : paths) {
